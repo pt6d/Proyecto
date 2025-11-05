@@ -4,6 +4,6 @@ class Program
 {
     static void Main()
     {
-        Console.WriteLine("Prueba exitosa");
+        Console.WriteLine("Prueba exitosa XD");
     }
 }
