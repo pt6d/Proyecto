@@ -16,7 +16,7 @@ namespace Proyecto.ClasesComunes
 
         public abstract void CrearBaraja();
 
-        public void Barajar()
+        public void Barajear()
         {
             for (int i = 0; i < Cartas.Count; i++)
             {

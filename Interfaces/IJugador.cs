@@ -1,3 +1,5 @@
+using Proyecto.Interfaces;
+
 namespace Proyecto.Interfaces
 {
     public interface IJugador
