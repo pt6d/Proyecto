@@ -2,12 +2,11 @@ using System;
 using System.Collections.Generic;
 using Proyecto.Interfaces;
  
-namespace Proyecto.Clases.Blackjack
+namespace Proyecto.Clases.BlackJack
 {
     public abstract class JugadorBaseBlackjack : IJugador
 
     {
-
         public string Nombre { get; private set; }
         protected List<CartaBlackjack> Mano;
 
@@ -49,7 +48,10 @@ namespace Proyecto.Clases.Blackjack
             foreach (var carta in Mano)
             {
                 total += carta.Puntos;
-                if (carta.Valor == "A") ases++;
+                if (carta.Valor == "A")
+                {
+                    ases++;
+                }
             }
             while (total > 21 && ases > 0)  //Si se pasa, convierte el AS a 1
             {

@@ -1,6 +1,6 @@
 using Proyecto.ClasesComunes;
 
-namespace Proyecto.Clases.Blackjack
+namespace Proyecto.Clases.BlackJack
 {
     public class CartaBlackjack  : CartaBase
     {
@@ -10,8 +10,8 @@ namespace Proyecto.Clases.Blackjack
         public CartaBlackjack(string valor, string figura, string color, int puntos)
             : base(valor, color)
         {
-            this.Figura = figura;
-            this.Puntos = puntos;
+            Figura = figura;
+            Puntos = puntos;
         }
 
         public override string ToString()
