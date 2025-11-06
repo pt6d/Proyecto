@@ -7,9 +7,7 @@ namespace Proyecto.Interfaces
         string Nombre { get; }
 
         void RecibirCarta(ICarta carta);
-
         void MostrarMano();
-
         void Reiniciar();
 
         bool DeseaCarta();

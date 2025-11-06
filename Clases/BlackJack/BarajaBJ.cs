@@ -1,4 +1,5 @@
 using Proyecto.ClasesComunes;
+using System;
 
 namespace Proyecto.Clases.Blackjack
 {
@@ -12,7 +13,7 @@ namespace Proyecto.Clases.Blackjack
 
         public override void CrearBaraja()
         {
-            string[] figuras = { "Corazones", "Espadas", "Tréboles", "Diamantes" };
+            string[] figuras = { "Corazones", "Espadas", "Treboles", "Diamantes" };
             string[] valores = { "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A" };
 
             foreach (string figura in figuras)
