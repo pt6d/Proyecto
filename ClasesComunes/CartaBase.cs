@@ -9,8 +9,8 @@ namespace Proyecto.ClasesComunes
 
         public CartaBase(string valor, string color)
         {
-            this.Valor = valor;
-            this.Color = color;
+            Valor = valor;
+            Color = color;
         }
 
         public override string ToString()

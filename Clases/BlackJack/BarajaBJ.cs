@@ -1,7 +1,7 @@
 using Proyecto.ClasesComunes;
 using System;
 
-namespace Proyecto.Clases.Blackjack
+namespace Proyecto.Clases.BlackJack
 {
     public class BarajaBlackjack : BarajaBase<CartaBlackjack>
     {
