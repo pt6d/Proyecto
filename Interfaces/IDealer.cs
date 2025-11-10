@@ -4,6 +4,7 @@ namespace Proyecto.Interfaces
 {
     public interface IDealer : IJugador
     {
-        void Barajear(BarajaBase<CartaBase> baraja);
+        void Barajear<T>(BarajaBase<T> baraja) where T : CartaBase;
+
     }
 }
