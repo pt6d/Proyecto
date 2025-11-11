@@ -11,5 +11,6 @@ namespace Proyecto.Interfaces
         void Reiniciar();
 
         bool DeseaCarta();
+        int CalcularPuntos();
     }
 }
