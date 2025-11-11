@@ -1,6 +1,5 @@
 ﻿using System;
-//using Proyecto.Clases;
-//using Proyecto.Interfaces;
+using Proyecto.Clases.BlackJack;
 
 namespace Proyecto
 {
@@ -13,11 +12,11 @@ namespace Proyecto
             while (!salir)
             {
                 Console.Clear();
-                Console.WriteLine("-------- Menu --------");
-                Console.WriteLine("1. BlackJack");
+                Console.WriteLine("-------- MENU --------");
+                Console.WriteLine("1. Blackjack");
                 Console.WriteLine("2. UNO");
                 Console.WriteLine("3. Salir");
-                Console.WriteLine("Seleccione una opcion:");
+                Console.Write("Seleccione una opción: ");
 
                 try
                 {
@@ -26,14 +25,10 @@ namespace Proyecto
                     switch (opcion)
                     {
                         case 1:
-                            Console.WriteLine("Eduardo es gay");
-                            //IniciarBlackJack();
-                            Console.ReadLine();
+                            IniciarBlackjack();
                             break;
                         case 2:
-                            Console.WriteLine("Gabriel es gay");
                             //IniciarUNO();
-                            Console.ReadLine();
                             break;
                         case 3:
                             salir = true;
@@ -46,19 +41,27 @@ namespace Proyecto
                 }
                 catch
                 {
-                    Console.WriteLine("Opcion no valida");
+                    Console.WriteLine("Opción no valida");
                     Console.ReadLine();
                 }
             }
-
-
-
         }
 
+        static void IniciarBlackjack()
+        {
+            Console.Clear();
+            Console.WriteLine("--- BLACKJACKK ---\n");
 
+            var juego = new JuegoBlackjack(2);
+            juego.AgregarJugador(new JugadorCauteloso("Erick", 17));
+            juego.AgregarJugador(new JugadorTemerario("Eduardo GAY"));
 
+            juego.IniciarJuego();
 
+            Console.WriteLine("Presiona enter para regresar");
+            Console.ReadLine();
+        }
 
+        
     }
-
 }
