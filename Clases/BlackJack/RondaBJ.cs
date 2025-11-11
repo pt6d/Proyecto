@@ -36,7 +36,7 @@ namespace Proyecto.Clases.BlackJack
        
             foreach (var jugador in jugadores)
             {
-                while (jugador.DeseaCarta() && ((JugadorBaseBlackjack)jugador).CalcularPuntos() <= 21)
+                while (jugador.DeseaCarta() && jugador.CalcularPuntos() <= 21)
                     jugador.RecibirCarta(baraja.RepartirCarta());
 
                 jugador.MostrarMano();
@@ -48,12 +48,12 @@ namespace Proyecto.Clases.BlackJack
 
             dealer.MostrarMano();
 
-            int puntosDealer = ((JugadorBaseBlackjack)dealer).CalcularPuntos();
+            int puntosDealer = dealer.CalcularPuntos();
 
             // Compara los resultados de cada juagdor
             foreach (var jugador in jugadores)
             {
-                int puntosJugador = ((JugadorBaseBlackjack)jugador).CalcularPuntos();
+                int puntosJugador = jugador.CalcularPuntos();
 
                 if (puntosJugador > 21)
                     Console.WriteLine($"{jugador.Nombre} se pasó de 21. Ha perdido");
@@ -65,6 +65,7 @@ namespace Proyecto.Clases.BlackJack
                     Console.WriteLine($"{jugador.Nombre} ha perdido");
             }
 
+            Console.WriteLine($"\nCartas restantes en la baraja: {baraja.CartasRestantes()}");
             Console.WriteLine("\n----- FIN DE LA RONDA -----\n");
         }
     }
