@@ -32,8 +32,8 @@ namespace Proyecto.Clases.BlackJack
 
             dealer.RecibirCarta(baraja.RepartirCarta());
             dealer.RecibirCarta(baraja.RepartirCarta());
+            Console.WriteLine();
 
-       
             foreach (var jugador in jugadores)
             {
                 while (jugador.DeseaCarta() && jugador.CalcularPuntos() <= 21)
