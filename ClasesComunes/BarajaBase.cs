@@ -41,5 +41,10 @@ namespace Proyecto.ClasesComunes
         {
             return Cartas.Count;
         }
+
+        public void AgregarCarta(T carta)
+        {
+            Cartas.Add(carta);
+        }
     }
 }
