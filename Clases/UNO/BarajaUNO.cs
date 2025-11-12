@@ -1,11 +1,10 @@
 using Proyecto.ClasesComunes;
-using System.Collections.Generic;
 
-namespace Proyecto.Clases.UNO
+namespace Proyecto.Clases.Uno
 {
-    public class BarajaUNO : BarajaBase<CartaUNO>
+    public class BarajaUno : BarajaBase<CartaUno>
     {
-        public BarajaUNO()
+        public BarajaUno()
         {
             CrearBaraja();
             Barajear();
@@ -13,25 +12,37 @@ namespace Proyecto.Clases.UNO
 
         public override void CrearBaraja()
         {
-            string[] colores = { "Rojo", "Azul", "Verde", "Amarillo" };
-            string[] valores = { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "Bloqueo", "Reversa", "+2" };
-            string[] especiales = { "CambioDeColor", "+4" };
+            string[] colores = { "Azul", "Rojo", "Verde", "Amarillo" };
 
             foreach (string color in colores)
             {
-                foreach (string valor in valores)
+                Cartas.Add(new CartaUno("0", color, "Número", 0));
+
+                for (int num = 1; num <= 9; num++)
                 {
-                    Cartas.Add(new CartaUNO(valor, color, "Normal"));
+                    Cartas.Add(new CartaUno(num.ToString(), color, "Número", num));
+                    Cartas.Add(new CartaUno(num.ToString(), color, "Número", num));
                 }
+
+                Cartas.Add(new CartaUno("Bloqueo", color, "Bloqueo", -1));
+                Cartas.Add(new CartaUno("Bloqueo", color, "Bloqueo", -1));
+
+                Cartas.Add(new CartaUno("Reversa", color, "Reversa", -1));
+                Cartas.Add(new CartaUno("Reversa", color, "Reversa", -1));
+
+                Cartas.Add(new CartaUno("+2", color, "+2", -1));
+                Cartas.Add(new CartaUno("+2", color, "+2", -1));
             }
 
-            foreach (string especial in especiales)
+            for (int i = 0; i < 4; i++)
             {
-                for (int i = 0; i < 4; i++)
-                {
-                    Cartas.Add(new CartaUNO(especial, "Negro", "Especial"));
-                }
+                Cartas.Add(new CartaUno("Cambio de Color", "Ninguno", "Comodin", -1));
+                Cartas.Add(new CartaUno("+4", "Ninguno", "Comodin", -1));
             }
         }
     }
 }
+
+
+
+

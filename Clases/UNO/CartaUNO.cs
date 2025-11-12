@@ -1,22 +1,40 @@
 using Proyecto.ClasesComunes;
 
-namespace Proyecto.Clases.UNO
+namespace Proyecto.Clases.Uno
 {
-    public class CartaUNO : CartaBase
+    public class CartaUno : CartaBase
     {
-        public string Tipo { get; private set; } // Tipos de cartas 
-        public string ColorCarta { get; private set; } 
+        public string Tipo { get; private set; }  
+        public int Numero { get; private set; }   
 
-        public CartaUNO(string valor, string colorCarta, string tipo)
-            : base(valor, colorCarta)
+        public CartaUno(string valor, string color, string tipo, int numero)
+            : base(valor, color)
         {
             Tipo = tipo;
-            ColorCarta = colorCarta;
+            Numero = numero;
         }
 
         public override string ToString()
         {
-            return $"{Valor} de color {ColorCarta} ({Tipo})";
+            return $"{Valor} {Color} ({Tipo})";
+        }
+
+        public bool PuedeJugarseSobre(CartaUno cartaEnMesa)
+        {
+            if (Tipo == "Comodin")
+                return true;
+
+            if (Color != "Ninguno" && cartaEnMesa.Color != "Ninguno" && Color == cartaEnMesa.Color)
+                return true;
+
+            if (Tipo == "Número" && cartaEnMesa.Tipo == "Número" && Numero == cartaEnMesa.Numero)
+                return true;
+
+            if (Tipo != "Número" && Tipo == cartaEnMesa.Tipo)
+                return true;
+
+            return false;
         }
     }
 }
+

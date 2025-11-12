@@ -1,5 +1,6 @@
 ﻿using System;
 using Proyecto.Clases.BlackJack;
+using Proyecto.Clases.Uno;
 
 namespace Proyecto
 {
@@ -28,7 +29,7 @@ namespace Proyecto
                             IniciarBlackjack();
                             break;
                         case 2:
-                            //IniciarUNO();
+                            IniciarUNO();
                             break;
                         case 3:
                             salir = true;
@@ -50,18 +51,34 @@ namespace Proyecto
         static void IniciarBlackjack()
         {
             Console.Clear();
-            Console.WriteLine("--- BLACKJACKK ---\n");
-
+            Console.WriteLine("========== BLACKJACK ==========");
+            
             var juego = new JuegoBlackjack(2);
-            juego.AgregarJugador(new JugadorCauteloso("Erik", 17));
-            juego.AgregarJugador(new JugadorTemerario("Eduardo GAY"));
-
+            
+            juego.AgregarJugador(new JugadorCauteloso("Erick", 17));
+            juego.AgregarJugador(new JugadorTemerario("Eduardo "));
+            
             juego.IniciarJuego();
-
-            Console.WriteLine("Presiona enter para regresar");
+            
+            Console.WriteLine("\nPresiona enter para regresar");
             Console.ReadLine();
         }
 
-        
+        static void IniciarUNO()
+        {
+            Console.Clear();
+            Console.WriteLine("============= UNO =============");
+            
+            var juego = new JuegoUno();
+            
+            juego.AgregarJugador(new JugadorAleatorioUno("Jugador 1"));
+            juego.AgregarJugador(new JugadorCalculadorUno("Jugador 2"));
+            juego.AgregarJugador(new JugadorAleatorioUno("Jugador 3"));
+            
+            juego.IniciarJuego();
+            
+            Console.WriteLine("\nPresiona enter para regresar");
+            Console.ReadLine();
+        }
     }
 }
