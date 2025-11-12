@@ -53,7 +53,7 @@ namespace Proyecto
             Console.WriteLine("--- BLACKJACKK ---\n");
 
             var juego = new JuegoBlackjack(2);
-            juego.AgregarJugador(new JugadorCauteloso("Erick", 17));
+            juego.AgregarJugador(new JugadorCauteloso("Erik", 17));
             juego.AgregarJugador(new JugadorTemerario("Eduardo GAY"));
 
             juego.IniciarJuego();
